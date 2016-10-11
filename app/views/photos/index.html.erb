@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <th>url </th>
+    <th>current_path </th>
+    <th>file_identifier</th>
+    <th>photo</th>
+    <th>url(:thumb)</th>
+    <th>thumb image</th>
+  </thead>
+  <tbody>
+    <% if Photo.count >0 %>
+      <% Photo.all.each do |photo| %>
+        <tr>
+          <td><%= photo.file.url %></td>
+          <td><%= photo.file.current_path %></td>
+          <td> <%= photo.file_identifier %> </td>
+          <td><%= image_tag "#{photo.file.url}" %></td>
+          <td><%= photo.file.url(:thumb) %></td>
+          <td><%= image_tag "#{photo.file.url(:thumb)}" %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+

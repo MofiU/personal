@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-3 col-md-offset-3 contant_info">
+CONTACT INFORMATION
+<div>
+  AENEAN NONUMMY HENDRERIT MAURIS. PHASELLUS PORTA. FUSCE SUSCIPIT VARIUS MI. CUM SOCIIS NATOQUE PENATIBUS ET MAGNIS DIS PARTURIENT MONTES, NASCETUR RIDICULUS MUS. NULLA DUI. FUSCE FEUGIAT MALESUADA ODIO.
+
+8901 MARMORA ROAD, GLASGOW, D04 89GR.
+FREEPHONE: +1 800 559 6580
+TELEPHONE: +1 800 603 6035
+FAX: +1 800 889 9898
+E-MAIL: MAIL@DEMOLINK.ORG
+</div>
+  </div>
+  <div class="col-md-3 feedback">
+    <%= form_for 'test', url: home_feedback_path, method: :post,  html: {class: 'form-vertical'} do |f| %>
+    <%= f.text_field :name, placeholder: 'NAME', class: 'form-control' %>
+    <%= f.text_field :email, placeholder: 'EMAIL', class: 'form-control' %>
+    <%= f.text_area :message, placeholder: 'MESSAGE', class: 'form-control'  %>
+    <%= f.submit :Send, class: 'btn btn-primary btn btn-block' %>
+    <% end %>
+  </div>
+</div>
+
+<style>
+.contant_info,.feedback{
+  text-align: center;
+}
+.feedback input,textarea,button{
+  margin-bottom: 15px;
+}
+</style>
