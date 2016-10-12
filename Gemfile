@@ -38,6 +38,12 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 
+## sidkiq
+gem 'redis'
+gem 'redis-namespace'
+gem 'sidekiq'
+gem 'sinatra', require: nil
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-fancybox'
   gem 'rails-assets-mixitup'

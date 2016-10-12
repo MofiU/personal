@@ -21,6 +21,34 @@ E-MAIL: MAIL@DEMOLINK.ORG
   </div>
 </div>
 
+
+
+<%= form_for :sidekiq_job, url: home_sidekiq_job_path, html: {remote: true, class: 'form-horizontal', style: 'margin-top: 100px;'} do |f| %>
+  <div class="form-group">
+    <%= f.label :count, '任务条数', class: 'col-sm-2 control-label' %>
+    <div class="col-md-2">
+      <%= f.text_field :count, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :delay, '延迟执行(Sec)', class: 'col-sm-2 control-label' %>
+    <div class="col-md-2">
+      <%= f.text_field :delay, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-2 col-md-offset-2">
+      <%= f.submit '开始执行', class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-2 col-md-offset-2">
+      <%= link_to 'sidekiq后台监控页面', sidekiq_web_path, class: 'btn btn-primary', target: '_blank' %>
+    </div>
+  </div>
+<% end %>
+
 <style>
 .contant_info,.feedback{
   text-align: center;

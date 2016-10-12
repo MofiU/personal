@@ -12,8 +12,13 @@ Rails.application.routes.draw do
     get 'about'
     get 'contact'
     post 'feedback'
+    post 'sidekiq_job'
   end
 
   resources :photos
 
+
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end
